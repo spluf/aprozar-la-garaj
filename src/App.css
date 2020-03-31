@@ -1,9 +1,81 @@
-.App-header {
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:ital,wght@0,400;1,900&display=swap');
+body {
   background-image: url('./home.jpeg');
   background-position: center;
+}
+.App{
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-y: scroll;
+}
+
+.App-header {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-repeat: no-repeat;
-  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  line-height: 7vh;
+}
+
+h1{
+  font-size: 10em;
+  font-family: 'Pacifico', cursive;
+  color:wheat;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);;
+  /* src: url('Pacifico-Regular.ttf') format('truetype'); */
+}
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-variant-caps: normal;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 2em;
+}
+
+.particles {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.flex-grid {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 96vh;
+  margin-bottom: 2vh;
+}
+.col1 {
+  flex:1;
+  display: flex;
+  align-items: center;
+  margin-left: 2em;
+}
+.col2 {
+  flex: 1;
+}
+
+.category-list {
+  list-style-type: none;
+  padding:1em;
+}
+
+.category-list a{
+  min-width: 150px;
+  text-align: center;
+}
+
+.head{
+  width: 100%;
+  margin:0;
+}
+
+.card {
+  max-width: 25%;
+  height: auto;
 }
