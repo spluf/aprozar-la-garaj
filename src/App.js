@@ -37,9 +37,11 @@ class App extends Component {
           <h2>Iti aducem prospetime pe masa!</h2>
         </header>
         <LGNav />
-        <div id='product-list' className="main tc">
-            <SearchBox searchChange={this.onSearchChange} />
-            <CardList products={filteredProducts} />
+        <div>
+          <div id='product-list' className="main tc">
+              <SearchBox searchChange={this.onSearchChange} />
+              <CardList products={filteredProducts} />
+          </div>
         </div>
       </div>
     );

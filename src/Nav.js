@@ -23,7 +23,7 @@ export default function LGNav() {
     }
 
     return (
-        <nav className="navigation dt dt--fixed w-100 border-box pa3 ph5-ns bb b--black-10">
+        <nav className="navigation dt dt--fixed w-100 border-box pa3 pa0-ns ph5-ns bb b--black-10">
             <div className="dtc dn-ns w-third"></div>
             
             <div id="menu" className="bg-white static-ns absolute  mt4 mt0-ns left-100 db dtc-ns v-mid w-100 w-100-ns w-75-ns h-80 tr pa3">

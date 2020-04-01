@@ -47,6 +47,10 @@ h2 {
   z-index: -1;
 }
 
+h3 {
+  font-size: .8em;
+}
+
 .particles {
   position: fixed;
   top: 0;
@@ -59,8 +63,7 @@ h2 {
 .main {
   background-color: white;
   min-height: 100vh;
-  padding-top:10vh;
-  clear: both;
+  padding-top:4vh;
 }
 
 .head{
@@ -74,7 +77,6 @@ h2 {
   width: 100%;
   background-color: white;
   z-index: 9;
-  clear: both;
 }
 
 .bradius {

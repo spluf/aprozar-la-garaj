@@ -7,7 +7,7 @@ const cardComponent = products.map((product, i) => {
 })
 
     return (
-        <section className="cardList cf w-100 pa2-ns">
+        <section className="cardList cf w-100">
             {cardComponent}
         </section>
     )
