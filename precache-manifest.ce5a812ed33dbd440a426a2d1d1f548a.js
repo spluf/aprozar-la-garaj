@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "20392be79a20127ced5737a2e3272412",
+    "revision": "4b8304515a93129ac835f23e3fdd8b57",
     "url": "/aprozar-la-garaj/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/aprozar-la-garaj/static/css/2.3b6f1bda.chunk.css"
   },
   {
-    "revision": "6aac6ffe64ceee2b1d52",
-    "url": "/aprozar-la-garaj/static/css/main.1dc5e80a.chunk.css"
+    "revision": "28418a8bbcbc5f30fae6",
+    "url": "/aprozar-la-garaj/static/css/main.18ba70fc.chunk.css"
   },
   {
     "revision": "3d68f8311f4d03b74f3e",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/aprozar-la-garaj/static/js/2.f7a7ac0e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6aac6ffe64ceee2b1d52",
-    "url": "/aprozar-la-garaj/static/js/main.91ff1e06.chunk.js"
+    "revision": "28418a8bbcbc5f30fae6",
+    "url": "/aprozar-la-garaj/static/js/main.963e2c23.chunk.js"
   },
   {
     "revision": "74da1ac119ad8e80ac75",
