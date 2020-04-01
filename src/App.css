@@ -106,3 +106,11 @@ h2 {
   z-index: 0;
   transition: .3s;
 }
+
+.link:focus{
+  outline: none;
+}
+
+.link:active {
+  outline: none;
+}

@@ -4,19 +4,15 @@ export default function LGNav() {
     let menuIsOpen = false
 
     const closeMenu = (evt) => {
-        console.log(evt.target.previousSibling.className)
-        console.log(evt.target.previousSibling)
         evt.target.previousSibling.className = evt.target.previousSibling.className.replace('left-0', 'left-100')
         evt.target.innerHTML = 'Menu'
-    menuIsOpen = false
+        menuIsOpen = false
     }
 
     const openMenu = (evt) => {
-        console.log(evt.target.previousSibling.className)
-        console.log(evt.target.previousSibling)
         evt.target.previousSibling.className = evt.target.previousSibling.className.replace('left-100', 'left-0')
         evt.target.innerHTML = 'Close'
-    menuIsOpen = true
+        menuIsOpen = true
     }
 
     const onclick = (evt) => {
