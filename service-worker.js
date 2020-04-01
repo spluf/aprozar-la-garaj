@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/aprozar-la-garaj/precache-manifest.b7ef8b392e627e07a2d9058ee13b489a.js"
+  "/aprozar-la-garaj/precache-manifest.2c24a529f40b2272cab5f38b80ae0065.js"
 );
 
 self.addEventListener('message', (event) => {
