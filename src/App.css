@@ -3,6 +3,7 @@
 body {
   background-image: url('./home.jpeg');
   background-position: center;
+  font-family: 'Comfortaa', cursive;
 }
 .App{
   height: 100vh;
@@ -24,7 +25,7 @@ body {
 header h1{
   font-size: 10vw;
   font-family: 'Pacifico', cursive;
-  color:wheat;
+  color:white;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
   /* src: url('Pacifico-Regular.ttf') format('truetype'); */
 }
@@ -57,6 +58,9 @@ h2 {
 
 .main {
   background-color: white;
+  min-height: 100vh;
+  padding-top:10vh;
+  clear: both;
 }
 
 .head{
@@ -70,6 +74,7 @@ h2 {
   width: 100%;
   background-color: white;
   z-index: 9;
+  clear: both;
 }
 
 .bradius {
@@ -90,4 +95,14 @@ h2 {
 
 #menu {
   transition: .2s;
+}
+
+.grow:hover {
+  z-index: 2;
+  transition: .3s;
+}
+
+.grow {
+  z-index: 0;
+  transition: .3s;
 }

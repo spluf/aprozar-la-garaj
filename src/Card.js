@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Card({product}) {
     return (
-        <article className="fl grow w-100 tc w-50-m w-25-l">
+        <article className="fl grow dib f3-ns no-underline w-50 tc w-25-m w-20-l">
             <div className="aspect-ratio aspect-ratio--1x1">
                 <img alt='produs' src={product.imgUrl}
                     className="db bg-center cover aspect-ratio--object" />

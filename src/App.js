@@ -32,16 +32,14 @@ class App extends Component {
       <div className="App">
         <Particles className='particles'
                   params={particleParams} />
-        <header className="App-header">
+        <header id='header' className="App-header">
           <h1>Aprozar la garaj</h1>
           <h2>Iti aducem prospetime pe masa!</h2>
         </header>
-        <div className="main tc">
-          <LGNav />
-          <SearchBox searchChange={this.onSearchChange} />
-          <div>
-          <CardList products={filteredProducts} />
-          </div>
+        <LGNav />
+        <div id='product-list' className="main tc">
+            <SearchBox searchChange={this.onSearchChange} />
+            <CardList products={filteredProducts} />
         </div>
       </div>
     );
