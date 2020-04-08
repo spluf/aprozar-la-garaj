@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/aprozar-la-garaj/static/css/main.22d609fb.chunk.css",
-    "main.js": "/aprozar-la-garaj/static/js/main.b77a0f70.chunk.js",
-    "main.js.map": "/aprozar-la-garaj/static/js/main.b77a0f70.chunk.js.map",
+    "main.js": "/aprozar-la-garaj/static/js/main.fccef19d.chunk.js",
+    "main.js.map": "/aprozar-la-garaj/static/js/main.fccef19d.chunk.js.map",
     "runtime-main.js": "/aprozar-la-garaj/static/js/runtime-main.1baec8af.js",
     "runtime-main.js.map": "/aprozar-la-garaj/static/js/runtime-main.1baec8af.js.map",
     "static/css/2.3b6f1bda.chunk.css": "/aprozar-la-garaj/static/css/2.3b6f1bda.chunk.css",
     "static/js/2.8c39064c.chunk.js": "/aprozar-la-garaj/static/js/2.8c39064c.chunk.js",
     "static/js/2.8c39064c.chunk.js.map": "/aprozar-la-garaj/static/js/2.8c39064c.chunk.js.map",
     "index.html": "/aprozar-la-garaj/index.html",
-    "precache-manifest.cba8f3667b97fa6fbb8131b3d8a4499a.js": "/aprozar-la-garaj/precache-manifest.cba8f3667b97fa6fbb8131b3d8a4499a.js",
+    "precache-manifest.29955cca2d11ce33f5ade72c0e5bb450.js": "/aprozar-la-garaj/precache-manifest.29955cca2d11ce33f5ade72c0e5bb450.js",
     "service-worker.js": "/aprozar-la-garaj/service-worker.js",
     "static/css/2.3b6f1bda.chunk.css.map": "/aprozar-la-garaj/static/css/2.3b6f1bda.chunk.css.map",
     "static/css/main.22d609fb.chunk.css.map": "/aprozar-la-garaj/static/css/main.22d609fb.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.3b6f1bda.chunk.css",
     "static/js/2.8c39064c.chunk.js",
     "static/css/main.22d609fb.chunk.css",
-    "static/js/main.b77a0f70.chunk.js"
+    "static/js/main.fccef19d.chunk.js"
   ]
 }
