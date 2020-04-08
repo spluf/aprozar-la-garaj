@@ -30,8 +30,8 @@ export default function Nav({pageChange}) {
             <div className="dtc dn-ns w-third"></div>
             
             <div id="menu" className="static-ns absolute  mt4 mt0-ns left-100 db dtc-ns v-mid w-100 w-100-ns w-75-ns h-80 tr pa3">
-                <Link className="link dim white tr tl-ns f3 f5-ns db dib-ns mr3 mr4-ns" to='/'>Home</Link>
-                <Link className="link dim white tr tl-ns f3 f5-ns db dib-ns mr3 mr4-ns" to='/products'>Produse</Link>
+                <Link className="link dim white tr tl-ns f3 f5-ns db dib-ns mr3 mr4-ns" to='/aprozar-la-garaj/'>Home</Link>
+                <Link className="link dim white tr tl-ns f3 f5-ns db dib-ns mr3 mr4-ns" to='/aprozar-la-garaj/products'>Produse</Link>
                 <a onClick={pageChange} className="link dim white tr tl-ns f3 f5-ns db dib-ns mr3 mr0-ns" href="#" title="contact">Contact</a>
             </div>
             
