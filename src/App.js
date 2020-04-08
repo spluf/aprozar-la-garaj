@@ -12,8 +12,8 @@ const App = () => (
   <div className="App">
     <Nav />
     <Switch>
-      <Route exact path='/' component={HomePage} />
-      <Route exact path='/products' component={ProductsPage} />
+      <Route exact path='/aprozar-la-garaj/' component={HomePage} />
+      <Route exact path='/aprozar-la-garaj/products' component={ProductsPage} />
     </Switch>
   </div>
 )
