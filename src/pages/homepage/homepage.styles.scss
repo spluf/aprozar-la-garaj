@@ -1,0 +1,37 @@
+.particles {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 7vh;
+
+    & h1{
+        font-size: 10vw;
+        font-family: 'Pacifico', cursive;
+        color:white;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+        /* src: url('Pacifico-Regular.ttf') format('truetype'); */
+      }
+
+    & h2 {
+        font-family: 'Comfortaa', cursive;
+        font-variant-caps: normal;
+        font-size: 3vw;
+        padding: 1em;
+        background-color: black;
+        color: yellow;
+        z-index: -1;
+      }
+  }
+

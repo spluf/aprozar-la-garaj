@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+
+import './card.styles.scss';
 
 export default function Card({product}) {
     return (
@@ -8,8 +10,8 @@ export default function Card({product}) {
                     className="db bg-center cover aspect-ratio--object" />
             </div>
             <a href="#0" className="ph2 ph0-ns pb3 link db">
-                <h3 className="mb0 black-90">{product.name}</h3>
-                <h3 className="fw4 mt2 black-60">{product.price} Ron</h3>
+                <h1 className="mb0 white-90">{product.name}</h1>
+                <h2 className="fw4 mt2 white-60">{product.price} Ron</h2>
             </a>
         </article>
     )

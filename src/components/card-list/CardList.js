@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from './Card'
+import Card from './card/Card'
 
 export default function CardList({products}) {
 const cardComponent = products.map((product, i) => {
@@ -7,7 +7,7 @@ const cardComponent = products.map((product, i) => {
 })
 
     return (
-        <section className="cardList cf w-100">
+        <section className="cf w-100">
             {cardComponent}
         </section>
     )

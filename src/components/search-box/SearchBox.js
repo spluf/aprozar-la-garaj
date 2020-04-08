@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+
+import './searchbox.styles.scss';
 
 export default function SearchBox({searchfield, searchChange}) {
     return (

@@ -1,0 +1,30 @@
+.navigation { 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+}
+
+.nav-bg {
+    background-image: linear-gradient(to right, rgb(46, 45, 45) , rgb(53, 53, 45));
+}
+
+#menu {
+    transition: .2s;
+}
+  
+.link:focus{
+    outline: none;
+}
+
+.link:active {
+    outline: none;
+}
+
+.left-100 {
+    left: 100%;
+  }
+  
+  .left-0 {
+    left: 0;
+  }
