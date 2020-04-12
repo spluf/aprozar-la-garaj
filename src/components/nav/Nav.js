@@ -1,9 +1,10 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import {auth} from '../../firebase/firebase.utils';
 
-import './nav.styles.scss'
+import './nav.styles.scss';
 
-export default function Nav({pageChange}) {
+export default function Nav({currentUser}) {
     let menuIsOpen = false
 
     const closeMenu = (evt) => {
@@ -32,7 +33,13 @@ export default function Nav({pageChange}) {
             <div id="menu" className="static-ns absolute  mt4 mt0-ns left-100 db dtc-ns v-mid w-100 w-100-ns w-75-ns h-80 tr pa3">
                 <Link className="link dim white tr tl-ns f3 f5-ns db dib-ns mr3 mr4-ns" to='/aprozar-la-garaj/'>Home</Link>
                 <Link className="link dim white tr tl-ns f3 f5-ns db dib-ns mr3 mr4-ns" to='/aprozar-la-garaj/products'>Produse</Link>
-                <a onClick={pageChange} className="link dim white tr tl-ns f3 f5-ns db dib-ns mr3 mr0-ns" href="#" title="contact">Contact</a>
+                <Link className="link dim white tr tl-ns f3 f5-ns db dib-ns mr3 mr4-ns" to='/aprozar-la-garaj/contact'>Contact</Link>
+                {
+                    currentUser ? 
+                    <div className='link dim white tr tl-ns f3 f5-ns db dib-ns mr3 mr0-ns' onClick={() => auth.signOut}>Sign Out</div>
+                    :
+                    <Link className="link dim white tr tl-ns f3 f5-ns db dib-ns mr3 mr0-ns" to='/aprozar-la-garaj/signin'>Sign In</Link>
+                }
             </div>
             
             <a href="#." id="menu-btn" onClick={onclick} className="dtc tr v-mid dn-ns w-third pr2 p0-ns link dim white">

@@ -7,7 +7,7 @@ import SearchBox from '../../components/search-box/SearchBox';
 
 import './products.styles.scss';
 
-class Products extends Component {
+class ProductsPage extends Component {
     constructor(){
         super();
         this.state = {
@@ -40,4 +40,4 @@ class Products extends Component {
     }
 }
 
-export default Products;
+export default ProductsPage;

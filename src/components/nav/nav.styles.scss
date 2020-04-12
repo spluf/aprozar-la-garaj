@@ -12,6 +12,10 @@
 #menu {
     transition: .2s;
 }
+
+.link {
+    cursor: pointer;
+}
   
 .link:focus{
     outline: none;
