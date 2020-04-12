@@ -36,7 +36,7 @@ export default function Nav({currentUser}) {
                 <Link className="link dim white tr tl-ns f3 f5-ns db dib-ns mr3 mr4-ns" to='/aprozar-la-garaj/contact'>Contact</Link>
                 {
                     currentUser ? 
-                    <div className='link dim white tr tl-ns f3 f5-ns db dib-ns mr3 mr0-ns' onClick={() => auth.signOut}>Sign Out</div>
+                    <div className='link dim white tr tl-ns f3 f5-ns db dib-ns mr3 mr0-ns' onClick={() => auth.signOut()}>Sign Out</div>
                     :
                     <Link className="link dim white tr tl-ns f3 f5-ns db dib-ns mr3 mr0-ns" to='/aprozar-la-garaj/signin'>Sign In</Link>
                 }
