@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import 'tachyons';
 import './App.scss';
 
-import Header from './components/header/header'
+import Header from './components/header/header.component'
 import HomePage from './pages/homepage/homepage.component';
 import ProductsPage from './pages/products/products.component'
 import LoginRegisterPage from './pages/login-register/login-register.component';
