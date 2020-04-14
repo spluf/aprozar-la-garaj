@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {connect} from 'react-redux';
+
 import {auth} from '../../firebase/firebase.utils';
 
-import './nav.styles.scss';
+import './header.styles.scss';
 
-export default function Nav({currentUser}) {
+const Header = ({currentUser}) => {
     let menuIsOpen = false
 
     const closeMenu = (evt) => {
@@ -48,3 +50,9 @@ export default function Nav({currentUser}) {
         </nav>
     )
 }
+
+const mapStateToProps = state => ({
+    currentUser: state.user.currentUser
+});
+
+export default connect(mapStateToProps)(Header)
