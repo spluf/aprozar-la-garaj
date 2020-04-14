@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 import 'tachyons';
@@ -49,15 +49,19 @@ class App extends Component {
           <Route exact path='/aprozar-la-garaj/' component={HomePage} />
           <Route exact path='/aprozar-la-garaj/products' component={ProductsPage} />
           <Route exact path='/aprozar-la-garaj/contact' component={ContactPage} />
-          <Route exact path='/aprozar-la-garaj/signin' component={LoginRegisterPage} />
+          <Route exact path='/aprozar-la-garaj/signin' render={() => this.props.currentUser ? (<Redirect to='/aprozar-la-garaj/' />) : (<LoginRegisterPage />)} />
         </Switch>
       </div>
     )
   }
 }
 
+const mapStateToProps = ({user}) => ({
+  currentUser: user.currentUser
+})
+
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 })
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
