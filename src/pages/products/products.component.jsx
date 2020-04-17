@@ -2,8 +2,9 @@ import React from 'react';
 import { Component } from 'react';
 
 import {products} from './products';
-import CardList from '../../components/card-list/CardList'
+import CardList from '../../components/card-list/CardList';
 import SearchBox from '../../components/search-box/SearchBox';
+import CheckoutList from '../../components/checkout-list/checkout-list.component';
 
 import './products.styles.scss';
 
@@ -29,6 +30,9 @@ class ProductsPage extends Component {
         <div className='main product-page'>
            <div className='shop-list'>
                 <SearchBox searchChange={this.onSearchChange} />
+                <div className='checkout-list'>
+                    <CheckoutList />
+                </div>
             </div>
             <div className='product-list'>
                     <CardList products={filteredProducts} />
