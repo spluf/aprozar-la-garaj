@@ -1,6 +1,6 @@
 .cart-dropdown {
     position: absolute;
-    width: 240px;
+    width: 300px;
     height: 340px;
     display: flex;
     flex-direction: column;
@@ -9,13 +9,13 @@
     background-color: white;
     top: 51px;
     right: 10px;
-    z-index: 5;
+    color:black;
   
     .cart-items {
       height: 240px;
       display: flex;
       flex-direction: column;
-      overflow: scroll;
+      overflow-y: scroll;
     }
   
     button {
