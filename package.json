@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.4.1",
     "firebase": "^7.14.0",
+    "google-maps-react": "^2.0.2",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
@@ -19,9 +20,6 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "reselect": "^4.0.0"
-  },
-  "dev-dependencies":{
-    "redux-logger": "^3.0.6"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -47,6 +45,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "gh-pages": "^2.2.0",
+    "redux-logger": "^3.0.6"
   }
 }

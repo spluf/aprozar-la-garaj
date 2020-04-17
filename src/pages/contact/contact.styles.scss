@@ -1,0 +1,22 @@
+.contact-page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .map {
+        height: 90vh;
+        width: 50%;
+        position: relative;
+        display: flex;
+        min-width:400px;
+    }
+    
+    .contact-info {
+        height: 90vh;
+        width: 50%;
+        position: relative;
+        display: flex;
+        min-width:200px;
+        margin: auto 0 auto;
+    }
+}
