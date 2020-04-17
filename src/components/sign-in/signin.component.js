@@ -41,8 +41,8 @@ class SignIn extends React.Component {
   render() {
     return (
       <div className='sign-in'>
-        <h2>I already have an account</h2>
-        <span>Sign in with your email and password</span>
+        <h2>Am deja un cont</h2>
+        <span>Intra cu email si parola sau cu contul google</span>
 
         <form onSubmit={this.handleSubmit}>
           <FormInput
@@ -58,12 +58,12 @@ class SignIn extends React.Component {
             type='password'
             value={this.state.password}
             handleChange={this.handleChange}
-            label='password'
+            label='parola'
             required
           />
           <div className='buttons'>
-            <CustomButton type='submit'> SIGN IN </CustomButton>
-            <CustomButton onClick={signInWithGoogle} isGoogleSignIn> GOOGLE SIGN IN </CustomButton>
+            <CustomButton type='submit'> Intra </CustomButton>
+            <CustomButton onClick={signInWithGoogle} isGoogleSignIn> GOOGLE</CustomButton>
           </div>
         </form>
       </div>

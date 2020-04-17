@@ -23,7 +23,7 @@ const CartDropdown = ({cartItems, history, dispatch}) => {
             <CustomButton onClick={() => {
                 history.push('/aprozar-la-garaj/checkout');
                 dispatch(toggleCartHidden());
-            }}>GO TO CHECKOUT</CustomButton>
+            }}>FINALIZEAZA COMANDA</CustomButton>
         </div>
     )
 }

@@ -4,15 +4,23 @@
     height: 50px;
     width: 100%;
     display: flex;
+    justify-content: space-between;
     background-image: linear-gradient(to right, rgb(46, 45, 45) , rgb(53, 53, 45));
   
+    .logo-container {
+      height: 40px;
+      width: 40px;
+      margin-top:5px;
+      margin-left: 25px;
+    }
+
     .navigation {
-      width: 100%;
+      width: 80%;
       height: 100%;
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      float: right;
+      margin-right: 10px;
   
       .navigation-link {
         padding: 10px 15px;
