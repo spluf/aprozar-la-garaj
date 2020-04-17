@@ -1,5 +1,7 @@
-import React from 'react'
-import Card from './card/Card'
+import React from 'react';
+import Card from './card/Card';
+
+import './cardlist.styles.scss';
 
 export default function CardList({products}) {
 const cardComponent = products.map((product, i) => {
@@ -7,7 +9,7 @@ const cardComponent = products.map((product, i) => {
 })
 
     return (
-        <section className="cf w-100">
+        <section className="card-list">
             {cardComponent}
         </section>
     )

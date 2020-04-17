@@ -26,14 +26,12 @@ class ProductsPage extends Component {
     })
 
     return(
-        <div className='main cf w-100'>
-           <div className='fl no-underline w-100 w-100-m w-50-ns '>
+        <div className='main product-page'>
+           <div className='shop-list'>
                 <SearchBox searchChange={this.onSearchChange} />
             </div>
-            <div className='fl no-underline w-100 w-100-m w-50-ns '>
-                <div className=" tc">
+            <div className='product-list'>
                     <CardList products={filteredProducts} />
-                </div>
             </div>
         </div>
        )

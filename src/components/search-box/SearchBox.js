@@ -4,9 +4,9 @@ import './searchbox.styles.scss';
 
 export default function SearchBox({searchfield, searchChange}) {
     return (
-        <div className='pa2'>
+        <div className='search-box'>
             <input 
-                className='ma3 pa3 ba shadow-3 bradius w75'
+                className='search-field'
                 type='search' 
                 onChange={searchChange}
                 placeholder='Cauta produs' />

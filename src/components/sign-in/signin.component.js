@@ -40,7 +40,7 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div className='sign-in fl no-underline w-100 w-100-m w-50-ns'>
+      <div className='sign-in'>
         <h2>I already have an account</h2>
         <span>Sign in with your email and password</span>
 

@@ -1,34 +1,23 @@
-.navigation { 
+.header {
     position: fixed;
-    top: 0;
+    height: 50px;
     width: 100%;
-    z-index: 9;
-}
-
-.nav-bg {
+    display: flex;
     background-image: linear-gradient(to right, rgb(46, 45, 45) , rgb(53, 53, 45));
-}
-
-#menu {
-    transition: .2s;
-}
-
-.link {
-    cursor: pointer;
-}
   
-.link:focus{
-    outline: none;
-}
-
-.link:active {
-    outline: none;
-}
-
-.left-100 {
-    left: 100%;
-  }
+    .navigation {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      float: right;
   
-  .left-0 {
-    left: 0;
+      .navigation-link {
+        padding: 10px 15px;
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
   }

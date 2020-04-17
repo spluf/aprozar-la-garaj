@@ -1,8 +1,11 @@
-.bradius {
-    border-radius: 25px;
-}
-  
-.w75 {
-    width: 30vw;
+.search-box {
+    width:100%;
+    text-align: center;
+
+    .search-field {
+        width: 75%;
+        border-radius: 4px;
+        padding:5px;
+    }
 }
 

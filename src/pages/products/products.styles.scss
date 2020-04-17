@@ -1,0 +1,19 @@
+.product-page {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .shop-list {
+        float: left;
+        order: 1;
+        min-width: 400px;
+        width: 50%;
+    }
+
+    .product-list {
+        float: left;
+        order: 2;
+        min-width: 500px;
+        width: 50%;
+    }
+}

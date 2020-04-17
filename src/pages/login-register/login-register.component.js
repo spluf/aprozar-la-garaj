@@ -6,7 +6,7 @@ import './login-register.styles.scss';
 
 export default function LoginRegisterPage() {
     return (
-        <div className='main cf w-100'>
+        <div className='main login-register'>
             <SignIn />
             <SignUp />
         </div>

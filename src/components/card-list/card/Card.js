@@ -1,18 +1,29 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {addItem} from '../../../redux/cart/cart.actions';
+
+import CustomButton from '../../custom-button/customButton.component';
 
 import './card.styles.scss';
 
-export default function Card({product}) {
+const Card = ({product, addItem}) => {
+    
     return (
-        <article className="fl grow no-underline w-50 w-25-m w-20-l">
-            <div className="aspect-ratio aspect-ratio--1x1">
-                <img alt='produs' src={product.imgUrl}
-                    className="db bg-center cover aspect-ratio--object" />
+        <article className="card">
+            <div className="image" style={{
+                backgroundImage: `url(${product.imgUrl})`
+            }} />
+            <div className='collection-footer'>
+                <span className='name'>{product.name}</span>
+                <span className='price'>{product.price}</span>
             </div>
-            <a href="#0" className="ph2 ph0-ns pb3 link db">
-                <h1 className="mb0 white-90">{product.name}</h1>
-                <h2 className="fw4 mt2 white-60">{product.price} Ron</h2>
-            </a>
+            <CustomButton onClick={() => addItem(product)} inverted>Adauga</CustomButton>
         </article>
     )
 }
+
+const mapDispatchToProps = dispatch => ({
+    addItem: item => dispatch(addItem(item))
+})
+
+export default connect(null, mapDispatchToProps)(Card);
