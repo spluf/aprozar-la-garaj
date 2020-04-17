@@ -1,5 +1,5 @@
 import React from 'react';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 import './contact.styles.scss';
 
@@ -17,12 +17,15 @@ const ContactPage = ({google}) => {
                 <Map 
                     style={mapStyles}
                     google={google}
-                    zoom={8}
-                    initialCenter={{ lat: 47.444, lng: -122.176}}
-                />
+                    zoom={16}
+                    initialCenter={{ lat: 47.0755495, lng: 21.9286541 }}
+                    >
+                        <Marker position={{ lat: 47.0755495, lng: 21.9286541 }} />
+                    </Map>
             </div>
             <div class='contact-info'>
-                Contact info
+                <p><span><b>Addresa:</b> </span>Bulevardul Ștefan cel Mare 54, Oradea</p>
+                <p><span><b>Telefon:</b> </span>0740 290 433</p>
             </div>
         </div>
     )
