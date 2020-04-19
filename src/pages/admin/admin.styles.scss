@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 
     .shop-list {
         float: left;
@@ -23,5 +24,20 @@
         order: 2;
         width: 50%;
         min-width: 400px;
+    }
+}
+
+.admin-page {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .admin-menu {
+        width:15%;
+    }
+
+    .admin-content {
+        width:85%;
     }
 }

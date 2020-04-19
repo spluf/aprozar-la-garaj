@@ -3,16 +3,18 @@ import { Component } from 'react';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 
-import CardList from '../../components/card-list/CardList';
+import ProductTable from '../../components/product-table/product-table.component';
 import SearchBox from '../../components/search-box/SearchBox';
-import CheckoutList from '../../components/checkout-list/checkout-list.component';
+import AddEditProductComponent from '../../components/add-edit-product/add-edit-product.component';
+import AdminMenu from '../../components/admin-menu/admin-menu.component';
+
 import {firestore} from '../../firebase/firebase.utils';
 import {updateProductList} from '../../redux/product/product.actions';
 import {selectProductList} from '../../redux/product/product.selectors';
 
-import './products.styles.scss';
+import './admin.styles.scss';
 
-class ProductsPage extends Component {
+class AdminPage extends Component {
     constructor(props){
         super(props);
         console.log('props', props)
@@ -45,16 +47,20 @@ class ProductsPage extends Component {
     })
 
     return(
-        <div className='main product-page'>
-           <div className='shop-list'>
-                <SearchBox searchChange={this.onSearchChange} />
-                <div className='checkout-list'>
-                    <CheckoutList />
+        <div className='main'>
+            <div className='admin-page'>
+                <div className='admin-menu'>
+                    <AdminMenu />
+                </div>
+                <div className='admin-content'>
+                    <SearchBox searchChange={this.onSearchChange} />
+                    <div className='product-page'>
+                        <ProductTable products={filteredProducts} />
+                        <AddEditProductComponent />
+                    </div>
                 </div>
             </div>
-            <div className='product-list'>
-                    <CardList products={filteredProducts} />
-            </div>
+
         </div>
        )
     }
@@ -67,4 +73,4 @@ const mapDispatchToProps = dispatch => ({
 const mapStateToProps = createStructuredSelector({
     products: selectProductList,
 })
-export default connect(mapStateToProps, mapDispatchToProps)(ProductsPage);
+export default connect(mapStateToProps, mapDispatchToProps)(AdminPage);

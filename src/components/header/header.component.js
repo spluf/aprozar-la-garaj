@@ -16,7 +16,7 @@ const Header = ({currentUser, hidden}) => {
 
     return (
         <div className='header'>
-            <div class='logo-container'>
+            <div className='logo-container'>
             <Link className="navigation-link" to='/aprozar-la-garaj/'>
                 <Logo />
             </Link>
@@ -26,6 +26,7 @@ const Header = ({currentUser, hidden}) => {
                 
                 <Link className="navigation-link" to='/aprozar-la-garaj/products'>Produse</Link>
                 <Link className="navigation-link" to='/aprozar-la-garaj/contact'>Contact</Link>
+                <Link className="navigation-link" to='/aprozar-la-garaj/admin'>Admin</Link>
                 {
                     currentUser ? 
                     <div className='navigation-link' onClick={() => auth.signOut()}>Iesi</div>

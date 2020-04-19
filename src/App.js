@@ -11,6 +11,7 @@ import ProductsPage from './pages/products/products.component'
 import LoginRegisterPage from './pages/login-register/login-register.component';
 import ContactPage from './pages/contact/contact.component';
 import CheckoutPage from './pages/checkout/checkout.component';
+import AdminPage from './pages/admin/admin.component'
 import {auth, createUserProfileDocument} from './firebase/firebase.utils';
 import {setCurrentUser} from './redux/user/user.actions';
 import {selectCurrentUser} from './redux/user/user.selectors';
@@ -51,6 +52,7 @@ class App extends Component {
           <Route exact path='/aprozar-la-garaj/' component={HomePage} />
           <Route exact path='/aprozar-la-garaj/products' component={ProductsPage} />
           <Route exact path='/aprozar-la-garaj/contact' component={ContactPage} />
+          <Route exact path='/aprozar-la-garaj/admin' component={AdminPage} />
           <Route exact path='/aprozar-la-garaj/signin' render={() => this.props.currentUser ? (<Redirect to='/aprozar-la-garaj/' />) : (<LoginRegisterPage />)} />
           <Route exact path='/aprozar-la-garaj/checkout' component={CheckoutPage}/>
 
