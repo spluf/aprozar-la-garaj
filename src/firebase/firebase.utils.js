@@ -42,6 +42,73 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
+export const addCategoryDocument = async(category, additionalData) => {
+  if(!category) return;
+
+  const {name} = category;
+
+  const collectionRef = firestore.collection('category');
+  const categoryRef = await collectionRef.doc();
+
+  try {
+    await categoryRef.set({
+      name,
+      products: [],
+      ...additionalData
+    })
+  }
+  catch(error){
+    console.log('error creating category', error.message);
+  }
+}
+
+export const addUOMDocument = async(uom, additionalData) => {
+  if(!uom) return;
+
+  const {name} = uom;
+
+  const collectionRef = firestore.collection('uom');
+  const uomRef = await collectionRef.doc();
+
+  try {
+    await uomRef.set({
+      name,
+      ...additionalData
+    })
+  }
+  catch(error){
+    console.log('error creating category', error.message);
+  }
+}
+
+export const addProductDocument = async(product, additionalData) => {
+  console.log(product);
+  if(!product) return;
+
+  const collectionRef = firestore.collection('category');
+  const categoryRef = collectionRef.doc(product.category.id);
+  const category = await (await categoryRef.get()).data();
+  
+  
+  const existingProduct = category.products.find(prod => prod.id === product.id);
+  if(product.id && existingProduct) {
+    const products = category.products.map(prod => {
+      if(prod.id === product.id)
+        prod = {...product, ...additionalData}
+      return prod;
+    })
+
+    category.products = [...products];
+  }
+  else {
+    category.products.push({...product, ...additionalData});
+  }
+
+  console.log(category);
+  console.log(categoryRef)
+  categoryRef.update(category);
+}
+
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 

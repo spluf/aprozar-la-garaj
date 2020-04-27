@@ -52,7 +52,7 @@ class App extends Component {
           <Route exact path='/aprozar-la-garaj/' component={HomePage} />
           <Route exact path='/aprozar-la-garaj/products' component={ProductsPage} />
           <Route exact path='/aprozar-la-garaj/contact' component={ContactPage} />
-          <Route exact path='/aprozar-la-garaj/admin' component={AdminPage} />
+          <Route path='/aprozar-la-garaj/admin' component={AdminPage} />
           <Route exact path='/aprozar-la-garaj/signin' render={() => this.props.currentUser ? (<Redirect to='/aprozar-la-garaj/' />) : (<LoginRegisterPage />)} />
           <Route exact path='/aprozar-la-garaj/checkout' component={CheckoutPage}/>
 

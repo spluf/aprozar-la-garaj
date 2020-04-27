@@ -1,16 +1,32 @@
 import productActionTypes from './product.types';
 
 const INITIAL_STATE = {
-    products: []
+    productList: [],
+    selectedProduct: {
+        name: '',
+        imgUrl: '',
+        uom:{},
+        category: {},
+        price:0
+    }
 }
 
 const productReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case productActionTypes.UPDATE_PRODUCT_LIST:
-            console.log('payload', action.payload);
             return {
                 ...state,
-                products: Object.assign(action.payload)
+                productList: Object.assign(action.payload)
+            }
+        case productActionTypes.SELECT_PRODUCT:
+            return {
+                ...state,
+                selectedProduct: Object.assign(action.payload)
+            }
+        case productActionTypes.UPDATE_SELECTED_PRODUCT_VALUES:
+            return {
+                ...state,
+                selectedProduct: Object.assign(action.payload)
             }
         default:
             return state;

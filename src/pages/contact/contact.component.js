@@ -23,7 +23,7 @@ const ContactPage = ({google}) => {
                         <Marker position={{ lat: 47.0755495, lng: 21.9286541 }} />
                     </Map>
             </div>
-            <div class='contact-info'>
+            <div className='contact-info'>
                 <p><span><b>Addresa:</b> </span>Bulevardul Ștefan cel Mare 54, Oradea</p>
                 <p><span><b>Telefon:</b> </span>0740 290 433</p>
             </div>

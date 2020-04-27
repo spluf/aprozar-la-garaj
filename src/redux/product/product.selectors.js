@@ -1,11 +1,15 @@
 import {createSelector} from 'reselect';
 
 const selectProducts = state => {
-    console.log('state', state);
-    return state.products;
+    return state.productList;
 };
 
 export const selectProductList = createSelector(
     [selectProducts],
-    (products) => products.products
+    (productList) => productList.products
 );
+
+export const getSelectedProduct = createSelector(
+    [selectProducts],
+    (productList) => productList.selectedProduct
+)

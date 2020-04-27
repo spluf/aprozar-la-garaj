@@ -7,15 +7,14 @@ import CardList from '../../components/card-list/CardList';
 import SearchBox from '../../components/search-box/SearchBox';
 import CheckoutList from '../../components/checkout-list/checkout-list.component';
 import {firestore} from '../../firebase/firebase.utils';
-import {updateProductList} from '../../redux/product/product.actions';
-import {selectProductList} from '../../redux/product/product.selectors';
+import {updateCategoryList} from '../../redux/category/category.actions';
+import {selectCategoryList} from '../../redux/category/category.selectors';
 
 import './products.styles.scss';
 
 class ProductsPage extends Component {
     constructor(props){
         super(props);
-        console.log('props', props)
         this.state = {
           searchfield: '',
         }
@@ -23,11 +22,11 @@ class ProductsPage extends Component {
     unsubscribeFromSnapshot = null;
 
     componentDidMount = () => {
-        const collectionRef = firestore.collection('products');
+        const collectionRef = firestore.collection('category');
 
         this.unsubscribeFromSnapshot = collectionRef.onSnapshot(async snapshot => {
-            const products = snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
-            this.props.updateProductList(products);
+            const categories = snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
+            this.props.updateCategoryList(categories);
         })
     };
 
@@ -40,8 +39,14 @@ class ProductsPage extends Component {
     }
     
     render(){
-        const filteredProducts = this.props.products.filter(product => {
-          return product.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(this.state.searchfield.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase())
+        const filteredProducts = this.props.categories.map(productList => {
+            console.log(productList)
+            return {
+                name: productList.name,
+                products: productList.products.filter(product => {
+                    return product.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(this.state.searchfield.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase())
+                })
+            }
     })
 
     return(
@@ -53,7 +58,7 @@ class ProductsPage extends Component {
                 </div>
             </div>
             <div className='product-list'>
-                    <CardList products={filteredProducts} />
+                    <CardList productsList={filteredProducts} />
             </div>
         </div>
        )
@@ -61,10 +66,10 @@ class ProductsPage extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    updateProductList: products => dispatch(updateProductList(products))
+    updateCategoryList: products => dispatch(updateCategoryList(products))
 })
 
 const mapStateToProps = createStructuredSelector({
-    products: selectProductList,
+    categories: selectCategoryList,
 })
 export default connect(mapStateToProps, mapDispatchToProps)(ProductsPage);

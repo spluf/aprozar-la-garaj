@@ -10,13 +10,13 @@ body {
 
 .App{
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .main {
   background-image: linear-gradient(to right, rgb(46, 45, 45) , rgb(53, 53, 45));
   min-height: 100vh;
-  padding:6vh 2em 0vh 2em;
+  padding:70px 2em 0vh 2em;
   color: white;
 }
 

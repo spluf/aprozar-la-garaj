@@ -1,8 +1,9 @@
 import React from 'react'; 
 import Particles from 'react-particles-js';
-import particleParams from './particleParams.json'
+import particleParams from './particleParams.json';
+import { Link } from 'react-router-dom';
 
-import './homepage.styles.scss'
+import './homepage.styles.scss';
 
 const HomePage = () => {
     return(
@@ -10,8 +11,10 @@ const HomePage = () => {
         <Particles className='particles'
                   params={particleParams} />
         <header>
-          <h1>Aprozar la garaj</h1>
-          <h2>Iti aducem prospetime pe masa!</h2>
+          <Link className="navigation-link" to='/aprozar-la-garaj/products'>
+            <h1>Aprozar la garaj</h1>
+            <h2>Iti aducem prospetime pe masa!</h2>
+          </Link>
         </header>
       </div>
     )
