@@ -16,9 +16,10 @@ import { render } from '@testing-library/react';
 class AddEditProductComponent extends React.Component {
     handleSubmit = async event => {
       event.preventDefault();
-      const cat = this.props.categories.find(category => category.id === this.props.selectedProduct.category.id);
+      console.log(this.props)
+      const cat = this.props.categories.find(category => category.id === this.props.selectedProduct.category || category.id === this.props.selectedProduct.category?.id);
       this.props.selectedProduct.category = {id: cat.id,name: cat.name};
-      this.props.selectedProduct.uom = this.props.uoms.find(uom => uom.id === this.props.selectedProduct.uom.id);
+      this.props.selectedProduct.uom = this.props.uoms.find(uom =>uom.id === this.props.selectedProduct.uom || uom.id === this.props.selectedProduct.uom?.id);
       
       await addProductDocument(this.props.selectedProduct);
     };

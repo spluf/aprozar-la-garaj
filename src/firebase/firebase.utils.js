@@ -3,15 +3,16 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBvv2BYLZKBVAx2EjrzbJjvJtceAVBGB5k",
-    authDomain: "aprozarlagaraj.firebaseapp.com",
-    databaseURL: "https://aprozarlagaraj.firebaseio.com",
-    projectId: "aprozarlagaraj",
-    storageBucket: "aprozarlagaraj.appspot.com",
-    messagingSenderId: "147104478682",
-    appId: "1:147104478682:web:e849f7b3d7288882163ce3",
-    measurementId: "G-4Z2KHTE3C5"
+  apiKey: "AIzaSyBvv2BYLZKBVAx2EjrzbJjvJtceAVBGB5k",
+  authDomain: "aprozarlagaraj.firebaseapp.com",
+  databaseURL: "https://aprozarlagaraj.firebaseio.com",
+  projectId: "aprozarlagaraj",
+  storageBucket: "aprozarlagaraj.appspot.com",
+  messagingSenderId: "147104478682",
+  appId: "1:147104478682:web:e849f7b3d7288882163ce3",
+  measurementId: "G-4Z2KHTE3C5"
 };
+
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -101,12 +102,32 @@ export const addProductDocument = async(product, additionalData) => {
     category.products = [...products];
   }
   else {
+    product.id = generateId();
+    if(category.products.find(prod => prod.id === product.id))
+      generateId();
     category.products.push({...product, ...additionalData});
   }
-
-  console.log(category);
-  console.log(categoryRef)
   categoryRef.update(category);
+}
+
+export const deleteProductDocument = async(product) => {
+  if(!product) return;
+
+  const collectionRef = firestore.collection('category');
+  const categoryRef = collectionRef.doc(product.category.id);
+  const category = await (await categoryRef.get()).data();
+  
+  
+  const existingProduct = category.products.find(prod => prod.id === product.id);
+  if(product.id && existingProduct) {
+    const products = category.products.filter(prod => prod.id !== product.id)
+    category.products = [...products];
+    categoryRef.update(category);
+  }
+}
+
+const generateId = function(){
+  return '' + Math.random().toString(36).substr(2, 20);
 }
 
 export const auth = firebase.auth();

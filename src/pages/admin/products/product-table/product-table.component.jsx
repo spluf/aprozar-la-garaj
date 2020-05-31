@@ -2,12 +2,17 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import {selectProductToEdit} from '../../../../redux/product/product.actions';
+import {deleteProduct} from '../../../../redux/product/product.actions';
 
 import './product-table.styles.scss';
 
 class ProductTable extends React.Component {
     onProductSelected = (product) => {
         this.props.selectProductToEdit(product);
+    }
+
+    onProductDeleted = (product) => {
+        this.props.deleteProduct(product);
     }
     
     render() {
@@ -29,7 +34,7 @@ class ProductTable extends React.Component {
                                                 <span className='name'>{product.name}</span>
                                                 <span className='price'>{product.price} RON</span>
                                                 <button onClick={() => this.onProductSelected(product)}>Editeaza</button>
-                                                <button>Sterge</button>
+                                                <button onClick={() => this.onProductDeleted(product)}>Sterge</button>
                                             </div>
                                         ))
                                     }

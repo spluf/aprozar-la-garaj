@@ -7,7 +7,7 @@ import ProductTable from './product-table/product-table.component';
 import SearchBox from '../../../components/search-box/SearchBox';
 import AddEditProductComponent from './add-edit-product/add-edit-product.component';
 
-import {firestore} from '../../../firebase/firebase.utils';
+import {firestore, deleteProductDocument} from '../../../firebase/firebase.utils';
 import {updateProductList} from '../../../redux/product/product.actions';
 import {updateCategoryList} from '../../../redux/category/category.actions';
 import {updateUOMList} from '../../../redux/uom/uom.actions';
@@ -27,15 +27,12 @@ class ProductsPage extends Component {
     };
     unsubscribeFromCategoriesSnapshot = null;
     unsubscribeFromUOMsSnapshot = null;
+    unsubscribeFromProductsSnapshot = null;
 
-    componentDidMount = () => {
-        const categoriesCollectionRef = firestore.collection('category');
+    componentWillMount = () => {
         const uomsCollectionRef = firestore.collection('uom');
 
-        this.unsubscribeFromCategoriesSnapshot = categoriesCollectionRef.onSnapshot(async snapshot => {
-            const categories = snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
-            this.props.updateCategoryList(categories);
-        })
+        this.updateCategories();
 
         this.unsubscribeFromUOMsSnapshot = uomsCollectionRef.onSnapshot(async snapshot => {
             const uoms = snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
@@ -46,10 +43,29 @@ class ProductsPage extends Component {
     componentWillUnmount = () => {
         this.unsubscribeFromCategoriesSnapshot();
         this.unsubscribeFromUOMsSnapshot();
+        this.unsubscribeFromProductsSnapshot();
     }
 
     onSearchChange = (event) => {
         this.setState({searchfield: event.target.value})
+    }
+
+    updateCategories = () => {
+        const categoriesCollectionRef = firestore.collection('category');
+        this.unsubscribeFromCategoriesSnapshot = categoriesCollectionRef.onSnapshot(async snapshot => {
+            const categories = snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
+            categories.forEach(cat => {
+                this.unsubscribeFromProductsSnapshot = categoriesCollectionRef.doc(cat.id).collection('products').onSnapshot(async snap => {
+                    cat.products = snap.docs.map(prod => prod.data())
+                });
+            })
+            this.props.updateCategoryList(categories);
+        })
+    }
+
+    deleteProduct = (product) => {
+        deleteProductDocument(product);
+        this.setState({searchfield: ''})
     }
     
     render(){
@@ -58,7 +74,7 @@ class ProductsPage extends Component {
             return {
                 name: productList.name,
                 products: productList.products.filter(product => {
-                    return product.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(this.state.searchfield.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase())
+                    return this.state.searchfield ? product.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(this.state.searchfield.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()) : productList.products
                 })
             }
     })
@@ -67,7 +83,7 @@ class ProductsPage extends Component {
         <div>
             <SearchBox searchChange={this.onSearchChange} />
             <div className='product-page'>
-                <ProductTable productsList={filteredProducts}  />
+                <ProductTable productsList={filteredProducts} deleteProduct ={this.deleteProduct}  />
                 <AddEditProductComponent categories={this.props.categories} uoms={this.props.uoms} />
             </div>
         </div>
