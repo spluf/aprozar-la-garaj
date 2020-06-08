@@ -43,7 +43,6 @@ class ProductsPage extends Component {
     componentWillUnmount = () => {
         this.unsubscribeFromCategoriesSnapshot();
         this.unsubscribeFromUOMsSnapshot();
-        this.unsubscribeFromProductsSnapshot();
     }
 
     onSearchChange = (event) => {
@@ -54,11 +53,7 @@ class ProductsPage extends Component {
         const categoriesCollectionRef = firestore.collection('category');
         this.unsubscribeFromCategoriesSnapshot = categoriesCollectionRef.onSnapshot(async snapshot => {
             const categories = snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
-            categories.forEach(cat => {
-                this.unsubscribeFromProductsSnapshot = categoriesCollectionRef.doc(cat.id).collection('products').onSnapshot(async snap => {
-                    cat.products = snap.docs.map(prod => prod.data())
-                });
-            })
+            console.log(categories)
             this.props.updateCategoryList(categories);
         })
     }
